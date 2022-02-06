@@ -5,7 +5,7 @@ import links from '../links'
 const Navbar = () => {
   const router = useRouter()
   return (
-    <header className="flex w-full justify-between bg-gray-800 p-1 text-sm">
+    <header className="sticky flex w-full justify-between bg-gray-800 p-1 text-sm">
       <div className="flex items-center p-5">
         <Image
           src={'/logo.jpg'}
@@ -42,10 +42,12 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center p-5">
+        {/* Seperator */}
         <div className="inline-flex md:hidden">
+          {/* Seperator */}
           <div className="dropdown-end dropdown">
             <div tabIndex="0" className="btn m-1">
-              Dropdown
+              Navigation
             </div>
             <ul
               tabIndex="0"
@@ -53,9 +55,40 @@ const Navbar = () => {
             >
               <li>
                 <a
+                  className="font-bold text-white transition duration-150 hover:text-teal-500"
+                  onClick={() => router.push('/#mint')}
+                >
+                  <i className="fas fa-cat pr-2" />
+                  Mint NFT
+                </a>
+              </li>
+              <li>
+                <a
+                  className="font-bold text-white transition duration-150 hover:text-teal-500"
+                  onClick={() => router.push('/#about')}
+                >
+                  <i className="fas fa-book pr-2" />
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  className="font-bold text-white transition duration-150 hover:text-teal-500"
+                  onClick={() => router.push('/#launch')}
+                >
+                  <i className="fas fa-rocket pr-2" />
+                  Launchs
+                </a>
+              </li>
+              <br />
+              <hr className="items-center" />
+              <br />
+              <li>
+                <a
                   className="font-bold transition duration-150 hover:text-[#7289da]"
                   onClick={() => router.push(links.discordServer)}
                 >
+                  <i className="fab fa-discord pr-2" />
                   Discord Server
                 </a>
               </li>
@@ -64,19 +97,22 @@ const Navbar = () => {
                   className="font-bold transition duration-150 hover:text-[#1DA1F2]"
                   onClick={() => router.push(links.twitterAccount)}
                 >
+                  <i className="fab fa-twitter pr-2" />
                   Twitter
                 </a>
               </li>
               <li>
                 <a
-                  className="font-bold transition duration-150 hover:text-[#c32aa3]"
+                  className="font-bold transition duration-150 hover:text-[#bd44a2]"
                   onClick={() => router.push(links.instagramAccount)}
                 >
+                  <i className="fab fa-instagram pr-2" />
                   Instagram
                 </a>
               </li>
             </ul>
           </div>
+          {/* Seperator */}
         </div>
 
         <div className="hidden space-x-7 md:inline-flex">
@@ -89,10 +125,11 @@ const Navbar = () => {
             onClick={() => router.push(links.twitterAccount)}
           />
           <i
-            className="fab fa-instagram cursor-pointer text-3xl text-white transition duration-150 hover:translate-y-[-0.25rem] hover:text-[#c32aa3]"
+            className="fab fa-instagram cursor-pointer text-3xl text-white transition duration-150 hover:translate-y-[-0.25rem] hover:text-[#bd44a2]"
             onClick={() => router.push(links.instagramAccount)}
           />
         </div>
+        {/* Seperator */}
       </div>
     </header>
   )

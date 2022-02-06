@@ -14,21 +14,29 @@ const MainPage = () => {
             by the community.
           </h3>
         </div>
-        <div className="mt-3 flex flex-col justify-center space-y-2 sm:space-y-0">
+        <div
+          id="mint"
+          className="mt-3 flex flex-col justify-center space-y-2 sm:space-y-0"
+        >
           {/* Seperator */}
           <label
-            for="mint-unavailable"
-            class="modal-button btn-outline btn btn-accent btn-md w-[10rem]"
+            htmlFor="mint-unavailable"
+            className="modal-button btn-outline btn btn-accent btn-md w-[10rem]"
           >
+            <i className="fas fa-cat pr-2" />
             Mint NFT
           </label>
           {/* Seperator */}
-          <input type="checkbox" id="mint-unavailable" class="modal-toggle" />
-          <div class="modal">
-            <div class="modal-box">
+          <input
+            type="checkbox"
+            id="mint-unavailable"
+            className="modal-toggle"
+          />
+          <div className="modal">
+            <div className="modal-box">
               <p>Minting is currently unavailable. Please check back later.</p>
-              <div class="modal-action">
-                <label for="mint-unavailable" class="btn">
+              <div className="modal-action">
+                <label htmlFor="mint-unavailable" className="btn btn-accent">
                   Close
                 </label>
               </div>
